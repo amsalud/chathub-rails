@@ -9,3 +9,7 @@
 User.create(username: "Aaron Salud", password: "scrapers2016")
 User.create(username: "John Wick", password: "password")
 User.create(username: "Robert Mccall", password: "scrapers2016")
+
+Message.create(body: "Hi my name is Aaron", user: User.find(1))
+Message.create(body: "Hi my name is John", user: User.find(2))
+Message.create(body: "Hi my name is Robert", user: User.find(3))
