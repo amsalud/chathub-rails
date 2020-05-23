@@ -18,7 +18,9 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to "Sign Up", signup_path, class: "ui primary button"%>
+        <% if !logged_in? %>
+         <%= link_to "Sign Up", signup_path, class: "ui primary button"%>
+         <%end %>
       </div>
     </div>
   </div>
