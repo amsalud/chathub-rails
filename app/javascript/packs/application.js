@@ -15,12 +15,27 @@ scroll_bottom = function(){
     }
 };
 
+submit_message = function(){
+    $('#message_body').on('keydown', function(e){
+       if(e.keyCode === 13){
+           $('button').click();
+           e.target.value = '';
+       }
+    });
+};
+
 $(window).on('turbolinks:load', function () {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function () {
         $(this).closest('.message').transition('fade');
     });
+
+    $("#message_form").bind("ajax:complete", function(event,xhr,status){
+        $('#message_body').val('');
+    });
+
     scroll_bottom();
+    submit_message();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
