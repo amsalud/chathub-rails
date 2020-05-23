@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Signup Route
   get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 
   #Login Routes
   get 'login', to: 'sessions#new'
